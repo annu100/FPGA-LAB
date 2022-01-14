@@ -1,0 +1,241 @@
+\documentclass{article}
+\usepackage{setspace}
+\usepackage{gensymb}
+
+\singlespacing
+
+\usepackage[cmex10]{amsmath}
+
+\usepackage{amsthm}
+\usepackage[latin1]{inputenc}
+\usepackage{mathrsfs}
+\usepackage{txfonts}
+\usepackage{stfloats}
+\usepackage{bm}
+\usepackage{cite}
+\usepackage{cases}
+\usepackage{subfig}
+\usepackage{karnaugh-map}
+\usepackage{longtable}
+\usepackage{multirow}
+
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{steinmetz}
+\usepackage{tikz}
+\usepackage{circuitikz}
+\usepackage{verbatim}
+\usepackage{tfrupee}
+\usepackage[breaklinks=true]{hyperref}
+
+\usepackage{tkz-euclide}
+
+\usetikzlibrary{arrows, shapes.gates.logic.US, calc}
+\usepackage{listings}
+    \usepackage{color}                                            %%
+    \usepackage{array}                                            %%
+    \usepackage{longtable}                                        %%
+    \usepackage{calc}                                             %%
+    \usepackage{multirow}                                         %%
+    \usepackage{hhline}                                           %%
+    \usepackage{ifthen}                                           %%
+    \usepackage{lscape}     
+\usepackage{multicol}
+\usepackage{chngcntr}
+
+\DeclareMathOperator*{\Res}{Res}
+
+\renewcommand\thesection{\arabic{section}}
+\renewcommand\thesubsection{\thesection.\arabic{subsection}}
+\renewcommand\thesubsubsection{\thesubsection.\arabic{subsubsection}}
+
+\renewcommand\thesectiondis{\arabic{section}}
+\renewcommand\thesubsectiondis{\thesectiondis.\arabic{subsection}}
+\renewcommand\thesubsubsectiondis{\thesubsectiondis.\arabic{subsubsection}}
+
+
+\hyphenation{op-tical net-works semi-conduc-tor}
+\def\inputGnumericTable{}                                 %%
+
+\lstset{
+%language=C,
+frame=single, 
+breaklines=true,
+columns=fullflexible
+}
+\AtBeginDocument{\hypersetup{pdfborder={0 0 0}}}
+\begin{document}
+
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{problem}{Problem}
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}{Example}[section]
+\newtheorem{definition}[problem]{Definition}
+
+\newcommand{\BEQA}{\begin{eqnarray}}
+\newcommand{\EEQA}{\end{eqnarray}}
+\newcommand{\define}{\stackrel{\triangle}{=}}
+\bibliographystyle{IEEEtran}
+\providecommand{\mbf}{\mathbf}
+\providecommand{\pr}[1]{\ensuremath{\Pr\left(#1\right)}}
+\providecommand{\qfunc}[1]{\ensuremath{Q\left(#1\right)}}
+\providecommand{\sbrak}[1]{\ensuremath{{}\left[#1\right]}}
+\providecommand{\lsbrak}[1]{\ensuremath{{}\left[#1\right.}}
+\providecommand{\rsbrak}[1]{\ensuremath{{}\left.#1\right]}}
+\providecommand{\brak}[1]{\ensuremath{\left(#1\right)}}
+\providecommand{\lbrak}[1]{\ensuremath{\left(#1\right.}}
+\providecommand{\rbrak}[1]{\ensuremath{\left.#1\right)}}
+\providecommand{\cbrak}[1]{\ensuremath{\left\{#1\right\}}}
+\providecommand{\lcbrak}[1]{\ensuremath{\left\{#1\right.}}
+\providecommand{\rcbrak}[1]{\ensuremath{\left.#1\right\}}}
+\theoremstyle{remark}
+\newtheorem{rem}{Remark}
+\newcommand{\sgn}{\mathop{\mathrm{sgn}}}
+%\providecommand{\abs}[1]{\left\vert#1\right\vert}
+\providecommand{\res}[1]{\Res\displaylimits_{#1}} 
+%\providecommand{\norm}[1]{\left\lVert#1\right\rVert}
+%\providecommand{\norm}[1]{\lVert#1\rVert}
+\providecommand{\mtx}[1]{\mathbf{#1}}
+%\providecommand{\mean}[1]{E\left[ #1 \right]}
+\providecommand{\fourier}{\overset{\mathcal{F}}{ \rightleftharpoons}}
+%\providecommand{\hilbert}{\overset{\mathcal{H}}{ \rightleftharpoons}}
+\providecommand{\system}{\overset{\mathcal{H}}{ \longleftrightarrow}}
+	%\newcommand{\solution}[2]{\textbf{Solution:}{#1}}
+\newcommand{\solution}{\noindent \textbf{Solution: }}
+\newcommand{\cosec}{\,\text{cosec}\,}
+\providecommand{\dec}[2]{\ensuremath{\overset{#1}{\underset{#2}{\gtrless}}}}
+\newcommand{\myvec}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
+\newcommand{\mydet}[1]{\ensuremath{\begin{vmatrix}#1\end{vmatrix}}}
+\numberwithin{equation}{subsection}
+\makeatletter
+\@addtoreset{figure}{problem}
+\makeatother
+\let\StandardTheFigure\thefigure
+\let\vec\mathbf
+\renewcommand{\thefigure}{\theproblem}
+\def\putbox#1#2#3{\makebox[0in][l]{\makebox[#1][l]{}\raisebox{\baselineskip}[0in][0in]{\raisebox{#2}[0in][0in]{#3}}}}
+     \def\rightbox#1{\makebox[0in][r]{#1}}
+     \def\centbox#1{\makebox[0in]{#1}}
+     \def\topbox#1{\raisebox{-\baselineskip}[0in][0in]{#1}}
+     \def\midbox#1{\raisebox{-0.5\baselineskip}[0in][0in]{#1}}
+\vspace{3cm}
+\title{FPGA LAB-Challenge Problem 1}
+\author{ANNU-EE21RESCH01010}
+\date{}
+\maketitle
+\renewcommand\thefigure{\arabic{figure}}
+\setcounter{figure}{0}
+\renewcommand{\thetable}{\arabic{table}}
+\setcounter{table}{0}
+Download all latex-tikz codes from 
+%
+\begin{lstlisting}
+https://github.com/annu100/FPGA-LAB
+\end{lstlisting}
+%
+\section{Problem Statement}
+Obtain and implement an algorithm to convert any truth table to NAND logic.
+\section{Solution}
+\subsection{Algorithm}
+\begin{itemize}
+\item Take the min terms for which the output in truth table will be \item  Write SOP form of each minterms.
+\item Take complement of each SOPs.
+\item Multiply all the obtained complemented minterm SOPs.
+\item Take the complement of above multiplication of SOP result.
+\item THIS IS OUR OBTAINED NAND LOGIC.
+\end{itemize}
+\subsection{Explanation using example}
+For example the given truth table is as below\\
+\textbf{STEP:1}\\
+\begin{table} [h!]
+    \centering
+    \begin{tabular}{ | c | c | c | c |c| }
+    \hline
+    A & B & C & F(A,B,C) & SOP(Minterm)\\
+    \hline
+    0 & 0 & 0 & 1  & $\Bar{A}$ $\Bar{B}$ $\Bar{C}$\\
+    0 & 0 & 1 & 1  & $\Bar{A}$ $\Bar{B}$ C\\
+    0 & 1 & 0 & 0 &   - \\
+    0 & 1 & 1 & 1 & $\Bar{A}$ BC\\
+    1 & 0 & 0 & 0 &   -\\
+    1 & 0 & 1 & 0 &   -\\
+    1 & 1 & 0 & 0 &   -\\
+    1 & 1 & 1 & 1 & ABC\\
+     \hline
+\end{tabular}
+\caption{Given Truth table}
+\label{Table1}
+\end{table}
+\newline
+From truth table, the min terms for which $F=1$ are 0,1,3,7.\\
+\textbf{STEP:2}\\
+Take complement of each SOPs.\\
+Complemented SOPs are\\
+\begin{align}
+    (\Bar{A} \Bar{B} \Bar{C})',\\
+    (\Bar{A} \Bar{B} C)',\\
+    (\Bar{A} BC)',\\
+    (ABC)'
+\end{align}
+
+\textbf{STEP 3:Multiply all the obtained COMPLEMENTED minterm SOPs}\\
+\begin{align}
+    K=(\Bar{A} \Bar{B} \Bar{C})' \times (\Bar{A} \Bar{B} C)' \times
+    (\Bar{A} BC)' \times
+    (ABC)'
+\end{align}
+
+\textbf{STEP 4:Take the complement of above multiplication of SOP result.}\\
+\begin{align}
+Result &=K'    
+       &=((\Bar{A} \Bar{B} \Bar{C})' \times
+    (\Bar{A} \Bar{B} C)' \times
+    (\Bar{A} BC)' \times
+    (ABC)')'
+\end{align}
+
+Now we can draw the logic circuit using NAND gates as below.\\\\
+\begin{figure}
+    \centering
+\begin{circuitikz}[label distance=2mm, scale=2,
+  connection/.style={draw,circle,fill=black,inner sep=1.5pt}
+  ]
+\node (x) at (0.5,0) {$A$};
+\node (y) at (1,0) {$B$};
+\node (z) at (1.5,0) {$C$};
+\node[nand gate US, draw, rotate=0, logic gate inputs=iii, scale=1.5] at ($(z)+(2,-1)$) (t1) {};
+\node[nand gate US, draw, rotate=0, logic gate inputs=iin, scale=1.5] at ($(z)+(2,-2)$) (t2) {};
+\node[nand gate US, draw, rotate=0, logic gate inputs=inn, scale=1.5] at ($(z)+(2,-3)$) (t3) {};
+\node[nand gate US, draw, rotate=0, logic gate inputs=nnn, scale=1.5] at ($(z)+(2,-4)$) (t4) {};
+\node[nand gate US, draw, logic gate inputs=nnnn, scale=1.25] at ($(t3.output) + (2, 0.5)$) (orTot) {};
+\draw (x) -- ($(x) + (0,-4.5)$);
+\draw (y) -- ($(y) + (0,-4.5)$);
+\draw (z) -- ($(z) + (0,-4.5)$);
+\draw (x) |- (t1.input 1) node[connection,pos=0.5]{};
+\draw (y) |- (t1.input 2) node[connection,pos=0.5]{};
+\draw (z) |- (t1.input 3) node[connection,pos=0.5]{};
+\draw (x) |- (t2.input 1) node[connection,pos=0.5]{};
+\draw (y) |- (t2.input 2) node[connection,pos=0.5]{};
+\draw (z) |- (t2.input 3) node[connection,pos=0.5]{};
+\draw (x) |- (t3.input 1) node[connection,pos=0.5]{};
+\draw (y) |- (t3.input 2) node[connection,pos=0.5]{};
+\draw (z) |- (t3.input 3) node[connection,pos=0.5]{};
+\draw (x) |- (t4.input 1) node[connection,pos=0.5]{};
+\draw (y) |- (t4.input 2) node[connection,pos=0.5]{};
+\draw (z) |- (t4.input 3) node[connection,pos=0.5]{};
+\draw (t1.output) -- ([xshift=0.3cm]t1.output) |- (orTot.input 1);
+\draw (t2.output) -- ([xshift=0.2cm]t2.output) |- (orTot.input 2);
+\draw (t3.output) -- ([xshift=0.2cm]t3.output) |- (orTot.input 3);
+\draw (t4.output) -- ([xshift=0.3cm]t4.output) |- (orTot.input 4);
+\draw (orTot.output) -- node[above]{$Result$} ($(orTot) + (1, 0)$);
+\end{circuitikz}
+\caption{Logic Circuit using NAND gates}
+\label{ckt1}
+\end{figure}
+
+\section{Conclusion}
+Following the above given steps, we can get  nand logic very easily for any given truth table problems.
+\end{document}
